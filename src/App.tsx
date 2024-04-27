@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useContext } from "react";
+import { TodoDataContext } from "./context/MainContext";
+import { ITodoList } from "./common/types";
+import Todos from "./components/todo1/todo.components";
+import "./App.css";
 
 function App() {
+  const response = useContext(TodoDataContext);
+  const [todoList, setTodoList] = useState<ITodoList[]>([]);
+
+  useEffect(() => {
+    if (response) {
+      setTodoList(response.todos);
+    }
+  }, [response]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="todoContainer">
+        <Todos />
+      </div>
+
+      <div className="taskEditContainer">
+        <p>I am HE</p>
+      </div>
     </div>
   );
 }

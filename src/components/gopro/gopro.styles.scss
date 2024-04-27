@@ -1,0 +1,27 @@
+.main {
+  background-color: #cde53d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 25vh;
+  padding: 0 2rem;
+}
+
+.text {
+  font-size: 1.2rem;
+}
+
+.goProText {
+  font-weight: bold;
+}
+
+.amountContainer {
+  align-self: baseline;
+  background: #071d55;
+  padding: 1.5rem 2rem;
+}
+
+.amountText {
+  color: #f2c94c;
+}
