@@ -1,6 +1,8 @@
 .App {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  background-color: #f3f3f3;
+  height: 100vh;
 }
 
 .todoContainer {
